@@ -35,29 +35,45 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
-    <include>
-      <uri>
-      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coke
-      </uri>
-    </include>
     
-	<model name="STACKING_BEAR">
-    <link name="link_0">
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>bear_model/meshes/model.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <collision name="collision_0">
-        <geometry>
-          <mesh>
-            <uri>bear_model/meshes/model.obj</uri>
-          </mesh>
-        </geometry>
-      </collision>
-    </link>
+    <model name="camera_bear">
+    	    <pose>4 0 1.0 0 0.0 3.14</pose>
+	    <link name="camera_link">
+	      <pose> 0.05 0.05 0.05 0 0 0 </pose>
+	      <visual name="visual">
+		<geometry>
+		  <mesh>
+		    <uri>bear_model/meshes/model.obj</uri>
+		  </mesh>
+		</geometry>
+	      </visual>
+	      <collision name="collision_0">
+		<geometry>
+		  <mesh>
+		    <uri>bear_model/meshes/model.obj</uri>
+		  </mesh>
+		</geometry>
+	      </collision>
+	    </link>
+	    <sensor name="segmentation_camera" type="segmentation">
+	      <topic>segmentation</topic>
+	      <camera>
+		<segmentation_type>instance</segmentation_type>
+		<horizontal_fov>1.047</horizontal_fov>
+		<image>
+		  <width>800</width>
+		  <height>600</height>
+		</image>
+		<clip>
+		  <near>0.1</near>
+		  <far>10</far>
+		</clip>
+	      </camera>
+	      <always_on>1</always_on>
+	      <update_rate>30</update_rate>
+	      <visualize>true</visualize>
+    	    </sensor>
   </model>
+  
   </world>
 </sdf>
