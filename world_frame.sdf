@@ -18,6 +18,8 @@
       name="ignition::gazebo::systems::SceneBroadcaster">
     </plugin>
 
+
+
     <!--light-->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
@@ -38,5 +40,24 @@
       https://fuel.gazebosim.org/1.0/OpenRobotics/models/Coke
       </uri>
     </include>
+    
+	<model name="STACKING_BEAR">
+    <link name="link_0">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>bear_model/meshes/model.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision_0">
+        <geometry>
+          <mesh>
+            <uri>bear_model/meshes/model.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
   </world>
 </sdf>
