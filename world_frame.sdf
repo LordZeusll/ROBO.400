@@ -55,6 +55,7 @@
 		</geometry>
 	      </collision>
 	    </link>
+	    
 	    <sensor name="segmentation_camera" type="segmentation">
 	      <topic>segmentation</topic>
 	      <camera>
