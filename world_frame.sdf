@@ -71,6 +71,9 @@
 		  <near>0.1</near>
 		  <far>10</far>
 		</clip>
+		<save enabled="true">
+      			<path>/home/lordzeus/ros2_stuff/dataset</path>
+    		</save>
 	      </camera>
 	      <always_on>1</always_on>
 	      <update_rate>30</update_rate>
@@ -98,6 +101,9 @@
         </geometry>
       </collision>
     </link>
+    <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+  	<label>10</label>
+    </plugin>
   </model>
   
   <model name="obj2">
@@ -120,6 +126,9 @@
         </geometry>
       </collision>
     </link>
+    <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+  	<label>10</label>
+    </plugin>
   </model>
   
   <model name="obj3">
@@ -142,6 +151,9 @@
         </geometry>
       </collision>
     </link>
+    <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+  	<label>10</label>
+    </plugin>    
   </model>
   
   <model name="obj4">
@@ -166,6 +178,9 @@
         </geometry>
       </visual>
     </link>
+    <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+  	<label>10</label>
+    </plugin>
   </model>
   
   </world>
