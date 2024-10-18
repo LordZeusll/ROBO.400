@@ -44,6 +44,7 @@
 		<geometry>
 		  <mesh>
 		    <uri>bear_model/meshes/model.obj</uri>
+		    <scale> 4 4 4 </scale>
 		  </mesh>
 		</geometry>
 	      </visual>
@@ -51,6 +52,7 @@
 		<geometry>
 		  <mesh>
 		    <uri>bear_model/meshes/model.obj</uri>
+		    <scale> 4 4 4 </scale>
 		  </mesh>
 		</geometry>
 	      </collision>
@@ -77,6 +79,7 @@
   </model>
   
   <model name="obj1">
+  <pose>0 0 0 0 0.0 3.14</pose>
     <link name="link_0">
       <visual name="visual">
         <geometry>
@@ -98,6 +101,7 @@
   </model>
   
   <model name="obj2">
+  <pose>0 3 0 0 0.0 3.14</pose>
     <link name="link_0">
       <visual name="visual">
         <geometry>
@@ -119,6 +123,7 @@
   </model>
   
   <model name="obj3">
+  <pose>0 6 0 0 0.0 3.14</pose>
     <link name="link_0">
       <visual name="visual">
         <geometry>
@@ -134,52 +139,6 @@
             <uri>HELICOPTER/meshes/model.obj</uri>
             <scale> 10 10 10 </scale>
           </mesh>
-        </geometry>
-      </collision>
-    </link>
-  </model>
-  
-  <model name="obj4">
-    <link name="link_0">
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>Oak tree/meshes/model.obj</uri>
-            <scale> 10 10 10 </scale>
-          </mesh>
-          
-        </geometry>
-      </visual>
-      <collision name="collision_0">
-        <geometry>
-          <mesh>
-            <uri>Oak tree/meshes/model.obj</uri>
-            <scale> 10 10 10 </scale>
-          </mesh>
-          
-        </geometry>
-      </collision>
-    </link>
-  </model>
-  
-  <model name="obj5">
-    <link name="link_0">
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>Pine tree/meshes/model.obj</uri>
-            <scale> 10 10 10 </scale>
-          </mesh>
-          
-        </geometry>
-      </visual>
-      <collision name="collision_0">
-        <geometry>
-          <mesh>
-            <uri>Pine tree/meshes/model.obj</uri>
-            <scale> 10 10 10 </scale>
-          </mesh>
-          
         </geometry>
       </collision>
     </link>
