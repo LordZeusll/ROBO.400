@@ -1,0 +1,87 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.4.0)
+
+newmtl Metal
+Kd 0.545710623 0.545710623 0.545710623
+Ke 0 0 0
+d 1
+Ns 412.188141
+illum 2
+
+newmtl Stone.001
+Kd 0.383916855 0.524268866 0.453962117
+Ke 0 0 0
+d 1
+Ns 416.367584
+illum 2
+
+newmtl Stone.002
+Kd 0.773655593 0.788305342 0.714263082
+Ke 0 0 0
+d 1
+Ns 416.367584
+illum 2
+
+newmtl Stone
+Kd 0.514636278 0.524268866 0.475416631
+Ke 0 0 0
+d 1
+Ns 416.367584
+illum 2
+
+newmtl 01 - Default
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+d 1
+Ns 200
+illum 2
+
+newmtl RedMetal
+Kd 0.99139297 2.33280025e-05 2.33280025e-05
+Ke 0 0 0
+d 1
+Ns 200
+illum 2
+
+newmtl Plastic
+Kd 0.0209511314 0.0209511314 0.0209511314
+Ke 0 0 0
+d 1
+Ns 395.681
+illum 2
+
+newmtl Lens
+Kd 0.00293231825 0.00293231825 0.00293231825
+Ke 0 0 0
+d 1
+Ns 631.414917
+illum 2
+
+newmtl Plastic.001
+Kd 0.118047595 0.117025532 0.217882007
+Ke 0 0 0
+d 1
+Ns 575.93219
+illum 2
+
+newmtl Grass
+Kd 0 0.288816005 0.0384727493
+Ke 0 0 0
+d 1
+Ns 200
+illum 2
+
+newmtl Gazebo_White
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 490
+illum 2
+
+newmtl Gazebo_Orange
+Kd 0.99139297 0.311180532 2.33280025e-05
+Ke 0 0 0
+d 1
+Ns 490
+illum 2
+

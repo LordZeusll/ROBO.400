@@ -144,6 +144,29 @@
     </link>
   </model>
   
+  <model name="obj4">
+    <static>true</static>
+    <link name="link_0">
+      <collision name="collision_0">
+        <pose>0 -3 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>Ionic_Mascot/meshes/ionic_mascot.obj</uri>
+            <scale> 10 10 10 </scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 -3 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>Ionic_Mascot/meshes/ionic_mascot.obj</uri>
+            <scale> 10 10 10 </scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
   
   </world>
 </sdf>
