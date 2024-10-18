@@ -103,16 +103,16 @@
         <geometry>
           <mesh>
             <uri>FIRE_TRUCK/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
         </geometry>
       </visual>
       <collision name="collision_0">
         <geometry>
           <mesh>
             <uri>FIRE_TRUCK/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
         </geometry>
       </collision>
     </link>
@@ -124,16 +124,16 @@
         <geometry>
           <mesh>
             <uri>HELICOPTER/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
         </geometry>
       </visual>
       <collision name="collision_0">
         <geometry>
           <mesh>
             <uri>HELICOPTER/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
         </geometry>
       </collision>
     </link>
@@ -145,16 +145,18 @@
         <geometry>
           <mesh>
             <uri>Oak tree/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
+          
         </geometry>
       </visual>
       <collision name="collision_0">
         <geometry>
           <mesh>
             <uri>Oak tree/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
+          
         </geometry>
       </collision>
     </link>
@@ -166,16 +168,18 @@
         <geometry>
           <mesh>
             <uri>Pine tree/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
+          
         </geometry>
       </visual>
       <collision name="collision_0">
         <geometry>
           <mesh>
             <uri>Pine tree/meshes/model.obj</uri>
+            <scale> 10 10 10 </scale>
           </mesh>
-          <size> 1 1 1 </size>
+          
         </geometry>
       </collision>
     </link>
