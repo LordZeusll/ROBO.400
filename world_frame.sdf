@@ -5,18 +5,28 @@
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
-    <plugin
-      filename="libignition-gazebo-physics-system.so"
-      name="ignition::gazebo::systems::Physics">
-    </plugin>
-    <plugin
-      filename="libignition-gazebo-user-commands-system.so"
-      name="ignition::gazebo::systems::UserCommands">
-    </plugin>
-    <plugin
-      filename="libignition-gazebo-scene-broadcaster-system.so"
-      name="ignition::gazebo::systems::SceneBroadcaster">
-    </plugin>
+        <plugin
+            filename="ignition-gazebo-physics-system"
+            name="ignition::gazebo::systems::Physics">
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-user-commands-system"
+            name="ignition::gazebo::systems::UserCommands">
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-scene-broadcaster-system"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+        </plugin>
+        <plugin filename="ignition-gazebo-imu-system"
+                name="ignition::gazebo::systems::Imu">
+        </plugin>
+        <plugin filename="ignition-gazebo-sensors-system"
+                name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+        <plugin filename="ignition-gazebo-contact-system"
+                name="ignition::gazebo::systems::Contact">
+        </plugin>
 
 
 
@@ -71,29 +81,39 @@
       <pose>0 0 0 0 -0 0</pose>
     </model>
 
-<!--
-    <model name="camera_bear">
-    	    <pose>4 0 1.0 0 0.0 3.14</pose>
-	    <link name="camera_link">
-	      <pose> 0.05 0.05 0.05 0 0 0 </pose>
-	      <visual name="visual">
-		<geometry>
-		  <mesh>
+
+
+
+		<model name="segmentation_model">
+	  <pose>4 0 1.0 0 0.0 3.14</pose>
+	  <link name="link">
+	    <pose>0.05 0.05 0.05 0 0 0</pose>
+	    <inertial>
+	      <mass>0.1</mass>
+	      <inertia>
+		<ixx>0.000166667</ixx>
+		<iyy>0.000166667</iyy>
+		<izz>0.000166667</izz>
+	      </inertia>
+	    </inertial>
+	    <collision name="collision">
+	      <geometry>
+	         <mesh>
 		    <uri>bear_model/meshes/model.obj</uri>
 		    <scale> 4 4 4 </scale>
 		  </mesh>
-		</geometry>
-	      </visual>
-	      <collision name="collision_0">
-		<geometry>
-		  <mesh>
+
+	      </geometry>
+	    </collision>
+	    <visual name="visual">
+	      <geometry>
+	         <mesh>
 		    <uri>bear_model/meshes/model.obj</uri>
 		    <scale> 4 4 4 </scale>
 		  </mesh>
-		</geometry>
-	      </collision>
-	    </link>
-	    
+
+	      </geometry>
+	    </visual>
 	    <sensor name="segmentation_camera" type="segmentation">
 	      <topic>segmentation</topic>
 	      <camera>
@@ -107,47 +127,38 @@
 		  <near>0.1</near>
 		  <far>10</far>
 		</clip>
-		<save enabled="true">
-      			<path>dataset</path>
-    		</save>
+		    <save enabled="true">
+	      <path>DATSET_PATH</path>
+	    </save>
 	      </camera>
 	      <always_on>1</always_on>
 	      <update_rate>30</update_rate>
 	      <visualize>true</visualize>
-    	    </sensor>
-  </model>
-  
-  -->
-  
-  
-  <model name="segmentation_model">
-  <pose>4 0 1.0 0 0.0 3.14</pose>
-  <link name="link">
-    <pose>0.05 0.05 0.05 0 0 0</pose>
-    <inertial>
-      <mass>0.1</mass>
-      <inertia>
-        <ixx>0.000166667</ixx>
-        <iyy>0.000166667</iyy>
-        <izz>0.000166667</izz>
-      </inertia>
-    </inertial>
-    <collision name="collision">
-      <geometry>
-        <box>
-          <size>0.1 0.1 0.1</size>
-        </box>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <geometry>
-        <box>
-          <size>0.1 0.1 0.1</size>
-        </box>
-      </geometry>
-    </visual>
-    
-	<sensor name="semantic_segmentation_camera" type="segmentation">
+	    </sensor>
+	    
+	    <sensor name="instance_segmentation_camera" type="segmentation">
+	  <topic>panoptic</topic>
+	  <camera>
+	    <segmentation_type>instance</segmentation_type>
+	    <horizontal_fov>1.57</horizontal_fov>
+	    <image>
+	      <width>800</width>
+	      <height>600</height>
+	    </image>
+	    <clip>
+	      <near>0.1</near>
+	      <far>100</far>
+	    </clip>
+	    <save enabled="true">
+	      <path>segmentation_data/instance_camera</path>
+	    </save>
+	  </camera>
+	  <always_on>1</always_on>
+	  <update_rate>30</update_rate>
+	  <visualize>true</visualize>
+	</sensor>
+
+	    <sensor name="semantic_segmentation_camera" type="segmentation">
 	  <topic>semantic</topic>
 	  <camera>
 	    <segmentation_type>semantic</segmentation_type>
@@ -161,19 +172,18 @@
 	      <far>100</far>
 	    </clip>
 	    <save enabled="true">
-	      <path>/home/lordzeus/ros2_stuff/dataset</path>
+	      <path>segmentation_data/semantic_camera</path>
 	    </save>
 	  </camera>
 	  <always_on>1</always_on>
 	  <update_rate>30</update_rate>
 	  <visualize>true</visualize>
 	</sensor>
-  </link>
-</model>
 
-
-
-
+	  </link>
+	</model>
+  
+ 
 
 
 
@@ -198,7 +208,7 @@
       </collision>
     </link>
     <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-  	<label>10</label>
+  	<label>20</label>
     </plugin>
   </model>
   
@@ -223,7 +233,7 @@
       </collision>
     </link>
     <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-  	<label>10</label>
+  	<label>20</label>
     </plugin>
   </model>
   
@@ -248,7 +258,7 @@
       </collision>
     </link>
     <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-  	<label>10</label>
+  	<label>20</label>
     </plugin>    
   </model>
   
@@ -275,7 +285,7 @@
       </visual>
     </link>
     <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-  	<label>10</label>
+  	<label>15</label>
     </plugin>
   </model>
   
