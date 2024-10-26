@@ -274,12 +274,18 @@
 		      <near>0.1</near>
 		      <far>10</far>
 		    </clip>
+	<save enabled="true">
+	      <path>test2</path>
+	    </save>
 		  </depth_camera>
 		  <noise>
 		    <type>gaussian</type>
 		    <mean>0</mean>
 		    <stddev>0.007</stddev>
 		  </noise>
+	<save enabled="true">
+	      <path>test1</path>
+	    </save>
 		</camera>
 	      </sensor>
 
